@@ -13,8 +13,8 @@ public class KeypadScript : MonoBehaviour
     public TMP_Text keypadDisplay;
 
     public int passDigits;
-    public GameObject escapePod;
-    public GameObject escapePodStand;
+    //public GameObject escapePod;
+    //public GameObject escapePodStand;
 
     public Camera cutsceneCamera;
     public Camera playerCamera;
@@ -54,8 +54,8 @@ public class KeypadScript : MonoBehaviour
                 playerCamera.enabled = false;
                 cutsceneCamera.enabled = true;
 
-                Destroy(escapePodStand);
-                escapePod.GetComponent<BoxCollider>().enabled = false;//launch
+                //Destroy(escapePodStand);
+                //escapePod.GetComponent<BoxCollider>().enabled = false;//launch
 
                 keypadUI.SetActive(false);
                 this.gameObject.SetActive(false);

@@ -17,16 +17,16 @@ public class BaseRaycastFromPlyrCam : MonoBehaviour
     public bool greenBox = false;
     public bool yellowBox = false;
 
-    [SerializeField] GameObject doorButton;
+    //[SerializeField] GameObject doorButton;
     [SerializeField] AudioClip buttonSound;
     [SerializeField] AudioClip buttonSoundError;
 
     [SerializeField] AudioClip interactSound;
 
-    public Animator leftDoor;
-    public Animator rightDoor;
+    //public Animator leftDoor;
+    //public Animator rightDoor;
 
-    bool doorUnlocked = false;
+    //bool doorUnlocked = false;
 
     MeshRenderer hitObj;
     [SerializeField] GameObject messageBox;
@@ -40,17 +40,17 @@ public class BaseRaycastFromPlyrCam : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.forward * dist, Color.green);
 
-        if (redBox && blueBox && yellowBox && greenBox)//if boxes placed in the proper plates then buttton goes green
-        {
-            doorButton.GetComponent<Renderer>().material.color = Color.green;
-            doorUnlocked = true;
-        }
-        else
-        {
-            doorButton.GetComponent<Renderer>().material.color = Color.red;
-            doorUnlocked = false;
+        //if (redBox && blueBox && yellowBox && greenBox)//if boxes placed in the proper plates then buttton goes green
+        //{
+        //    doorButton.GetComponent<Renderer>().material.color = Color.green;
+        //    doorUnlocked = true;
+        //}
+        //else
+        //{
+        //    doorButton.GetComponent<Renderer>().material.color = Color.red;
+        //    doorUnlocked = false;
 
-        }
+        //}
 
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, dist))
@@ -123,16 +123,16 @@ public class BaseRaycastFromPlyrCam : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, dist))
             {
-                if (hit.collider.CompareTag("DoorButton") && doorUnlocked)
-                {
-                    GetComponent<AudioSource>().PlayOneShot(buttonSound);
-                    leftDoor.SetTrigger("OpenDoor");
-                    rightDoor.SetTrigger("OpenDoor");
-                }
-                else if (hit.collider.CompareTag("DoorButton") && !doorUnlocked)
-                {
-                    GetComponent<AudioSource>().PlayOneShot(buttonSoundError);
-                }
+                //if (hit.collider.CompareTag("DoorButton") && doorUnlocked)
+                //{
+                //    GetComponent<AudioSource>().PlayOneShot(buttonSound);
+                //    leftDoor.SetTrigger("OpenDoor");
+                //    rightDoor.SetTrigger("OpenDoor");
+                //}
+                //else if (hit.collider.CompareTag("DoorButton") && !doorUnlocked)
+                //{
+                //    GetComponent<AudioSource>().PlayOneShot(buttonSoundError);
+                //}
 
 
             }
